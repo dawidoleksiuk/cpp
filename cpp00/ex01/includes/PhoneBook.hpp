@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:14:58 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/04/25 21:29:33 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:39:32 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class PhoneBook{
 public:
 	PhoneBook();
-	bool	addContact(void);
+	void	addContact(void);
 	void	displayContactsPreview(void);
 	void	searchContact(void);
 private:

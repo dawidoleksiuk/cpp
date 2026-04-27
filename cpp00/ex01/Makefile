@@ -6,12 +6,12 @@
 #    By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/17 12:14:46 by doleksiu          #+#    #+#              #
-#    Updated: 2026/04/18 15:29:45 by doleksiu         ###   ########.fr        #
+#    Updated: 2026/04/26 12:35:37 by doleksiu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98 -I$(INCS_DIR)
+CXXFLAGS = -Wall -Wextra -Werror -g -O0 -std=c++98 -I$(INCS_DIR)
 
 NAME = phonebook
 SRCS_DIR = ./srcs

@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:19:58 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/04/25 23:13:34 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/04/27 22:56:00 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 PhoneBook::PhoneBook() : numOfContacts_(0) {}
 
-bool	PhoneBook::addContact(void)
+void	PhoneBook::addContact(void)
 {
 	if (!contacts[numOfContacts_ % 8].setContact(numOfContacts_))
-		return false;
+		return ;
 	numOfContacts_++;
-	return true;
+	return ;
 }
 
 void	PhoneBook::displayContactsPreview(void)
