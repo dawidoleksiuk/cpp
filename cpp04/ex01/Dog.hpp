@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/27 17:53:37 by doleksiu          #+#    #+#             */
+/*   Updated: 2026/06/02 20:32:14 by doleksiu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DOG_HPP
+# define DOG_HPP
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Dog : public Animal
+{
+public:
+	Dog();
+	Dog(const Dog& other);
+	Dog& operator=(const Dog& other);
+	~Dog();
+	void makeSound() const;
+	std::string getIdea(int index);
+	void setIdea(int index, std::string idea);
+private:
+	Brain *_brain;
+};
+
+#endif

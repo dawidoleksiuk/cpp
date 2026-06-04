@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/04 21:57:12 by doleksiu          #+#    #+#             */
+/*   Updated: 2026/06/04 22:19:38 by doleksiu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
+
+#include "IMateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+
+class MateriaSource: public IMateriaSource
+{
+public:
+	MateriaSource();
+	MateriaSource(const MateriaSource &other);
+	MateriaSource& operator=(const MateriaSource &other);
+	~MateriaSource();
+	void learnMateria(AMateria*);
+	AMateria* createMateria(std::string const & type);
+private:
+	AMateria *_materia[4];
+};
+#endif
