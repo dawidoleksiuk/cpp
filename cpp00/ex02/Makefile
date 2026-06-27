@@ -6,13 +6,13 @@
 #    By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/26 13:10:52 by doleksiu          #+#    #+#              #
-#    Updated: 2026/04/27 22:45:44 by doleksiu         ###   ########.fr        #
+#    Updated: 2026/06/27 17:19:27 by doleksiu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -g -O0 -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = account
 

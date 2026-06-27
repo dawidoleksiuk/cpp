@@ -6,12 +6,12 @@
 #    By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/01 09:31:12 by doleksiu          #+#    #+#              #
-#    Updated: 2026/05/01 20:02:56 by doleksiu         ###   ########.fr        #
+#    Updated: 2026/06/27 17:20:30 by doleksiu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -g -O0 -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = replace
 OBJS_DIR = ./objs

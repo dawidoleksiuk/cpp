@@ -6,12 +6,12 @@
 #    By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/29 20:47:00 by doleksiu          #+#    #+#              #
-#    Updated: 2026/04/29 20:47:26 by doleksiu         ###   ########.fr        #
+#    Updated: 2026/06/27 17:20:16 by doleksiu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -g -O0 -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = brain
 OBJS_DIR = ./objs

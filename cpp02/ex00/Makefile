@@ -6,12 +6,12 @@
 #    By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:44:36 by doleksiu          #+#    #+#              #
-#    Updated: 2026/05/14 19:01:32 by doleksiu         ###   ########.fr        #
+#    Updated: 2026/06/27 17:20:55 by doleksiu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -g -O0 -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = fixed
 OBJS_DIR = ./objs

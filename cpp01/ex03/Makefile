@@ -6,15 +6,15 @@
 #    By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/30 17:31:44 by doleksiu          #+#    #+#              #
-#    Updated: 2026/05/01 09:30:28 by doleksiu         ###   ########.fr        #
+#    Updated: 2026/06/27 17:20:23 by doleksiu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -g -O0 -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = weapon
-OBJS_DIR = ./objs
+OBJS_DIR = ./objss
 
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.cpp=.o))

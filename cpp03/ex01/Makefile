@@ -6,13 +6,12 @@
 #    By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:44:36 by doleksiu          #+#    #+#              #
-#    Updated: 2026/05/24 16:48:18 by doleksiu         ###   ########.fr        #
+#    Updated: 2026/06/27 17:21:26 by doleksiu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
-CXXFLAGS = -g -O0 -std=c++98
-
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = scavtrap
 OBJS_DIR = ./objs
 
