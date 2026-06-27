@@ -6,11 +6,12 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 12:14:22 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/04/17 13:30:21 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/06/27 11:50:26 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 
 int	main(int argc, char *argv[])
 {
