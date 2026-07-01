@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:15:13 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/06/27 12:07:09 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/01 13:54:47 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@
 class Contact{
 public:
 	bool	setContact(int numOfContacts);
-	void	displayPreviewHeader(void);
 	void	displayPreviewRow(void);
-	void	displayPreviewField(const std::string &field, bool pipe);
+	static void	displayPreviewField(const std::string &field, bool pipe);
 	void	displayInfo(void);
 private:
 	int			_index;

@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:19:58 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/06/27 12:05:01 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/01 15:26:51 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,14 @@
 #include <iostream>
 #include <cstdlib>
 
-PhoneBook::PhoneBook() : numOfContacts_(0) {}
+PhoneBook::PhoneBook() : _numOfContacts(0) {}
 
 void	PhoneBook::addContact(void)
 {
-	if (!contacts[numOfContacts_ % 8].setContact(numOfContacts_))
+	if (!_contacts[_numOfContacts % 8].setContact(_numOfContacts))
 		return ;
-	numOfContacts_++;
+	_numOfContacts++;
 	return ;
-}
-
-void	PhoneBook::displayContactsPreview(void)
-{
-	contacts[0].displayPreviewHeader();
-	for (int i = 0; i < 8; i++)
-	{
-		std::cout << std::setw(10);
-		contacts[i].displayPreviewRow();
-	}
-	std::cout << std::endl;
 }
 
 bool	isNumber(const std::string &str)
@@ -42,7 +31,7 @@ bool	isNumber(const std::string &str)
 	{
 		if (!isdigit(str[i]))
 		{
-			std::cout << "Please provide a number." << std::endl;
+			std::cout << "Please provide a positive number." << std::endl;
 			return false;
 		}
 	}
@@ -54,7 +43,7 @@ void	PhoneBook::searchContact(void)
 	std::string	userInput;
 	int	index;
 	
-	if (numOfContacts_ == 0)
+	if (_numOfContacts == 0)
 	{
 		std::cout << "There are no contacts to search." << std::endl;
 		return ;
@@ -70,11 +59,36 @@ void	PhoneBook::searchContact(void)
 		if (!isNumber(userInput))
 			continue ;
 		index = atoi(userInput.c_str()) - 1;
-		if (index < 0 || index > (numOfContacts_ - 1) % 8)
+		if (index < 0 || index > (_numOfContacts - 1) || index >= 8)
 			std::cout << "This index is incorrect." << std::endl;
 		else
 			break ;
 	}
-	
-	contacts[index].displayInfo();
+	_contacts[index].displayInfo();
+}
+
+void	PhoneBook::displayContactsPreview(void)
+{
+	int numOfRows;
+
+	if (_numOfContacts < 8)
+		numOfRows = _numOfContacts;
+	else
+		numOfRows = 8;
+	displayPreviewHeader();
+	for (int i = 0; i < numOfRows; i++)
+	{
+		std::cout << std::setw(10);
+		_contacts[i].displayPreviewRow();
+	}
+	std::cout << std::endl;
+}
+
+void	PhoneBook::displayPreviewHeader()
+{
+	Contact::displayPreviewField("index", true);
+	Contact::displayPreviewField("first name", true);
+	Contact::displayPreviewField("last name", true);
+	Contact::displayPreviewField("nickname", false);
+	std::cout << std::endl;
 }

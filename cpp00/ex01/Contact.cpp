@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:20:05 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/04/25 23:05:37 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/01 14:48:50 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,26 @@ std::string	Contact::setContactField(const std::string &msg)
 
 }
 
-bool	Contact::setContact(int numOfContacts_)
+bool	Contact::setContact(int numOfContacts)
 {
-	index = numOfContacts_;
-	firstName_ = setContactField("Enter first name: ");
-	if (firstName_.empty())
+	if (numOfContacts < 8)
+		_index = numOfContacts;
+	else
+		_index = numOfContacts % 8;
+	_firstName = setContactField("Enter first name: ");
+	if (_firstName.empty())
 		return false;
-	lastName_ = setContactField("Enter last name: ");
-	if (lastName_.empty())
+	_lastName = setContactField("Enter last name: ");
+	if (_lastName.empty())
 		return false;
-	nickname_ = setContactField("Enter nickname: ");
-	if (nickname_.empty())
+	_nickname = setContactField("Enter nickname: ");
+	if (_nickname.empty())
 		return false;
-	phoneNumber_ = setContactField("Enter phone number: ");
-	if (phoneNumber_.empty())
+	_phoneNumber = setContactField("Enter phone number: ");
+	if (_phoneNumber.empty())
 		return false;
-	darkestSecret_ = setContactField("Enter darkest secret: ");
-	if (darkestSecret_.empty())
+	_darkestSecret = setContactField("Enter darkest secret: ");
+	if (_darkestSecret.empty())
 		return false;
 	return true;
 }
@@ -58,29 +61,20 @@ void	Contact::displayPreviewField(const std::string &field, bool pipe)
 		std::cout << "|";	
 }
 
-void	Contact::displayPreviewHeader()
-{
-	displayPreviewField("index", true);
-	displayPreviewField("first name", true);
-	displayPreviewField("last name", true);
-	displayPreviewField("nickname", false);
-	std::cout << std::endl;
-}
-
 void	Contact::displayPreviewRow()
 {	
-	std::cout << std::setw(10) << (index % 8) + 1 << "|";
-	displayPreviewField(firstName_, true);
-	displayPreviewField(lastName_, true);
-	displayPreviewField(nickname_, false);
+	std::cout << std::setw(10) << (_index % 8) + 1 << "|";
+	displayPreviewField(_firstName, true);
+	displayPreviewField(_lastName, true);
+	displayPreviewField(_nickname, false);
 	std::cout << std::endl;
 }
 void	Contact::displayInfo(void)
 {
 	std::cout << std::endl << "The selected contact information:" << std::endl << std::endl;
-	std::cout << "Index: " << (index % 8) + 1 << std::endl;
-	std::cout << "First name: " << firstName_ << std::endl;
-	std::cout << "Last name: " << lastName_ << std::endl;
-	std::cout << "Nickname: " << nickname_ << std::endl;
-	std::cout << "Darkest secret: " << darkestSecret_ << std::endl << std::endl;
+	std::cout << "_Index: " << (_index % 8) + 1 << std::endl;
+	std::cout << "First name: " << _firstName << std::endl;
+	std::cout << "Last name: " << _lastName << std::endl;
+	std::cout << "Nickname: " << _nickname << std::endl;
+	std::cout << "Darkest secret: " << _darkestSecret << std::endl << std::endl;
 }
