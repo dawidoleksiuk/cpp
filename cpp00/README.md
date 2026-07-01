@@ -27,7 +27,7 @@ Once launched, follow the interactive console prompts. You can use three command
 
 * **ex02 (Account):**
 make
-./globalbank
+./account
  
 Execute the generated binary and compare its output with the provided `19920104_091532.log` file to verify exact matching (excluding timestamps).
 
