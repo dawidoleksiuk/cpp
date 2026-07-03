@@ -6,12 +6,13 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:26:00 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/01 15:58:34 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/03 10:13:59 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <iostream>
 
 int	main()
 {

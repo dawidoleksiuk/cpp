@@ -6,26 +6,15 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:20:05 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/01 14:48:50 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:29:23 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <iostream>
+#include <iomanip> 
 
-
-std::string	Contact::setContactField(const std::string &msg)
-{
-	std::string	field;
-	
-	while (field.empty())
-	{
-		std::cout << msg;
-		if (!std::getline(std::cin, field))
-			break ;
-	}
-	return (field);
-
-}
+Contact::Contact() {}
 
 bool	Contact::setContact(int numOfContacts)
 {
@@ -77,4 +66,17 @@ void	Contact::displayInfo(void)
 	std::cout << "Last name: " << _lastName << std::endl;
 	std::cout << "Nickname: " << _nickname << std::endl;
 	std::cout << "Darkest secret: " << _darkestSecret << std::endl << std::endl;
+}
+
+std::string	Contact::setContactField(const std::string &msg)
+{
+	std::string	field;
+	
+	while (field.empty())
+	{
+		std::cout << msg;
+		if (!std::getline(std::cin, field))
+			break ;
+	}
+	return (field);
 }

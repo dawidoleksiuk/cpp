@@ -6,14 +6,14 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:19:58 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/01 15:26:51 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:12:49 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 #include <iostream>
-#include <cstdlib>
+#include <sstream>
 
 PhoneBook::PhoneBook() : _numOfContacts(0) {}
 
@@ -23,19 +23,6 @@ void	PhoneBook::addContact(void)
 		return ;
 	_numOfContacts++;
 	return ;
-}
-
-bool	isNumber(const std::string &str)
-{
-	for (size_t i = 0; i < str.size(); i++)
-	{
-		if (!isdigit(str[i]))
-		{
-			std::cout << "Please provide a positive number." << std::endl;
-			return false;
-		}
-	}
-	return true;
 }
 
 void	PhoneBook::searchContact(void)
@@ -50,17 +37,24 @@ void	PhoneBook::searchContact(void)
 	}
 	std::cout << std::endl;
 	displayContactsPreview();
-	std::cout << "Please select contact index you would like to display:" << std::endl;
-	std::cout << std::endl;
+	std::cout << "Please select a contact index you would like to display:" << std::endl;
 	while (1)
 	{
 		if (!std::getline(std::cin, userInput))
 			continue ;
-		if (!isNumber(userInput))
+		std::istringstream iss(userInput);
+		if (iss >> index)
+			index--;
+		else
+		{
+			std::cout << "Please provide a positive number." << std::endl;
 			continue ;
-		index = atoi(userInput.c_str()) - 1;
+		}
 		if (index < 0 || index > (_numOfContacts - 1) || index >= 8)
-			std::cout << "This index is incorrect." << std::endl;
+		{
+			std::cout << "This index is incorrect. ";
+			std::cout << "Please provide a positive number." << std::endl;
+		}
 		else
 			break ;
 	}
@@ -78,7 +72,6 @@ void	PhoneBook::displayContactsPreview(void)
 	displayPreviewHeader();
 	for (int i = 0; i < numOfRows; i++)
 	{
-		std::cout << std::setw(10);
 		_contacts[i].displayPreviewRow();
 	}
 	std::cout << std::endl;
