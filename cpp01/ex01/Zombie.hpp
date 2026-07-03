@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 17:42:03 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/04/29 20:40:05 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:20:57 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ public:
 	Zombie();
 	Zombie(std::string name);
 	~Zombie(void);
-
 	void	anounce(void);
 	void	setName(std::string name);
 private:
-	std::string	name;
+	std::string	_name;
 };
 
 Zombie	*zombieHorde(int N, std::string name);

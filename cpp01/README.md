@@ -37,6 +37,7 @@ make
 **Documentation & References:**
 
 * [cplusplus.com](https://cplusplus.com/) - Excellent tutorials and examples, especially useful for file stream operations (`<fstream>`) used in Exercise 04.
+* [geeksforgeeks.org](https://www.geeksforgeeks.org/cpp/pointers-and-references-in-c/) - Article on pointers and references in C++.
 
 **AI Usage:**
 

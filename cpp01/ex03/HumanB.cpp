@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 18:08:39 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/01 09:29:00 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/03 13:00:39 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ HumanB::HumanB(std::string name)
 	_name = name;
 }
 
-void	HumanB::setWeapon(Weapon weapon)
+void	HumanB::setWeapon(Weapon& weapon)
 {
-	_weapon->setType(weapon.getType());
+	_weapon = &weapon;
 }
 
 

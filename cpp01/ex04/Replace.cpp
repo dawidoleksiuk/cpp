@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 15:56:52 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/05 19:59:17 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/03 14:34:02 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+
+//ifstream to read
+//ofstream to write 
+//fstream to read and write
+//isopen checks success od file opening
 
 Replace::Replace(std::string filename, std::string s1, std::string s2)
 {
@@ -26,30 +31,47 @@ Replace::Replace(std::string filename, std::string s1, std::string s2)
 void	Replace::Execute(void)
 {
 	std::string	text;
+	bool firstLine = true;
 	std::string	newFilename = _filename + ".replace";
 
 	std::ifstream MyReadFile(_filename.c_str());
+	if (!MyReadFile.is_open())
+	{
+		std::cerr << "Could not open file: " << _filename << std::endl;
+		return ;
+	}
 	std::ofstream MySaveFile(newFilename.c_str()); 
+	if (!MySaveFile.is_open())
+	{
+		MyReadFile.close();
+		std::cerr << "Could not open file: " << newFilename << std::endl;
+		return ;
+	}
 	while (std::getline(MyReadFile, text))
 	{
-		_Replace(&text);
-		MySaveFile << text << std::endl;
+		if (!firstLine)
+			MySaveFile << "\n";
+		_ReplaceText(text);
+		MySaveFile << text;
+		firstLine = false;
 	}
 	MyReadFile.close();
 	MySaveFile.close();
 }
 
-void	Replace::_Replace(std::string *text)
+void	Replace::_ReplaceText(std::string& text)
 {
 	std::size_t	found;
 
+	if (_s1len == 0)
+		return ;
 	while (1)
 	{
-		found = text->find(_s1);
+		found = text.find(_s1);
 		if (found != std::string::npos)
 		{
-			text->erase(found, _s1len);
-			text->insert(found, _s2);
+			text.erase(found, _s1len);
+			text.insert(found, _s2);
 		}
 		else
 			break;

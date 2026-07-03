@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 21:53:47 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/05 22:20:05 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/03 15:22:04 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char* argv[])
 
 	if (argc != 2)
 	{
-		std::cout << "Usage: ./harl <level>";
+		std::cout << "Usage: ./harl <level>" << std::endl;
 		return 1;
 	}
 	harl.filter(argv[1]);

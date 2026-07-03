@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 20:03:31 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/05 22:05:53 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/03 14:35:21 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ class	Harl
 public:
 	void complain(std::string level);
 private:
-void	debug(void);
-void	info(void);
-void	warning(void);
-void	error(void);
-
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
 };
 
 #endif
