@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bsp.c                                              :+:      :+:    :+:   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:10:04 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/20 18:21:37 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/05 14:23:52 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+#include <cmath>
 
-float	area(x1, y1, x2, y2, x3, y3)
+float	area(Fixed const x1, Fixed const y1, Fixed const x2, Fixed const y2, Fixed const x3, Fixed const y3)
 {
-	float area;
+	float result;
 
-	area = (abs(x1*(y3-y2) + x2*(y3-y1) + x3*(y2-y1)))/2.0;
-	return area;
+	result = (abs(x1.toFloat()*(y3.toFloat()-y2.toFloat()) + x2.toFloat()*(y3.toFloat()-y1.toFloat()) + x3.toFloat()*(y2.toFloat()-y1.toFloat())))/2.0;
+	return result;
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	float area;
+	float total;
 	float areaA;
 	float areaB;
 	float areaC;
 
-	area = areaC = area(a.x, a.y, b.x, b.y, c.x, c.y);
-	areaA = area(point.x, point.y, b.x, b.y, c.x, c.y);
-	areaB = area(a.x, a.y, point.x, point.y, c.x, c.y);
-	areaC = area(a.x, a.y, b.x, b.y, point.x, point.y);
-	if ((areaA + areaB + areaC) != area)
+	total = area(a.getX(), a.getY(), b.getX(), b.getY(), c.getX(), c.getY());
+	areaA = area(point.getX(), point.getY(), b.getX(), b.getY(), c.getX(), c.getY());
+	areaB = area(a.getX(), a.getY(), point.getX(), point.getY(), c.getX(), c.getY());
+	areaC = area(a.getX(), a.getY(), b.getX(), b.getY(), point.getX(), point.getY());
+	if ((areaA + areaB + areaC) != total)
 		return false;
 	return true;
 }

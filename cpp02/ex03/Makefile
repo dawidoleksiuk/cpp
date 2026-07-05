@@ -6,7 +6,7 @@
 #    By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/06 16:44:36 by doleksiu          #+#    #+#              #
-#    Updated: 2026/06/27 17:21:11 by doleksiu         ###   ########.fr        #
+#    Updated: 2026/07/05 13:58:45 by doleksiu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = fixed
 OBJS_DIR = ./objs
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJS = $(addprefix $(OBJS_DIR)/,$(SRCS:.cpp=.o))
-INCS = Fixed.hpp
+INCS = Fixed.hpp Point.hpp
 
 all: $(NAME)
  

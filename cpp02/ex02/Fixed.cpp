@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 16:45:20 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/18 18:43:04 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/05 13:36:29 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ Fixed::Fixed(const float num)
 	_fpNum = (int)(roundf(num * pow(2,_fractionalBits)));
 }
 
-Fixed::Fixed(const Fixed &other)
+Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
-Fixed &Fixed::operator=(const Fixed &other)
+Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -52,37 +52,37 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-bool Fixed::operator>(const Fixed &other) const
+bool Fixed::operator>(const Fixed& other) const
 {
 	return (_fpNum > other._fpNum);
 }
 
-bool Fixed::operator<(const Fixed &other) const
+bool Fixed::operator<(const Fixed& other) const
 {
 	return (_fpNum < other._fpNum);
 }
 
-bool Fixed::operator>=(const Fixed &other) const
+bool Fixed::operator>=(const Fixed& other) const
 {
 	return (_fpNum >= other._fpNum);
 }
 
-bool Fixed::operator<=(const Fixed &other) const
+bool Fixed::operator<=(const Fixed& other) const
 {
 	return (_fpNum <= other._fpNum);
 }
 
-bool Fixed::operator==(const Fixed &other) const
+bool Fixed::operator==(const Fixed& other) const
 {
 	return (_fpNum == other._fpNum);
 }
 
-bool Fixed::operator!=(const Fixed &other) const
+bool Fixed::operator!=(const Fixed& other) const
 {
 	return (_fpNum != other._fpNum);
 }
 
-Fixed Fixed::operator+(const Fixed &other) const
+Fixed Fixed::operator+(const Fixed& other) const
 {
 	Fixed result;
 
@@ -91,7 +91,7 @@ Fixed Fixed::operator+(const Fixed &other) const
 	return result;
 }
 
-Fixed Fixed::operator-(const Fixed &other) const
+Fixed Fixed::operator-(const Fixed& other) const
 {
 	Fixed result;
 
@@ -100,7 +100,7 @@ Fixed Fixed::operator-(const Fixed &other) const
 	return result;
 }
 
-Fixed Fixed::operator*(const Fixed &other) const
+Fixed Fixed::operator*(const Fixed& other) const
 {
 	Fixed result;
 	float num;
@@ -111,7 +111,7 @@ Fixed Fixed::operator*(const Fixed &other) const
 	return result;
 }
 
-Fixed Fixed::operator/(const Fixed &other) const
+Fixed Fixed::operator/(const Fixed& other) const
 {
 	Fixed result;
 	float num;
@@ -122,7 +122,7 @@ Fixed Fixed::operator/(const Fixed &other) const
 	return result;
 }
 
-Fixed &Fixed::operator++()
+Fixed& Fixed::operator++()
 {
 	_fpNum++;
 
@@ -137,7 +137,7 @@ Fixed Fixed::operator++(int)
 	return temp;
 }
 
-Fixed &Fixed::operator--()
+Fixed& Fixed::operator--()
 {
 	_fpNum--;
 
@@ -161,7 +161,7 @@ int	Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	Fixed::_fpNum = raw;
+	_fpNum = raw;
 }
 
 float Fixed::toFloat(void) const
@@ -180,36 +180,36 @@ int Fixed::toInt(void) const
 	return num;
 }
 
-Fixed &Fixed::min(Fixed &num1, Fixed &num2)
+Fixed& Fixed::min(Fixed& num1, Fixed& num2)
 {
 	if (num1._fpNum > num2._fpNum)
 		return (num2);
 	return (num1);
 }
 
-const Fixed &Fixed::min(const Fixed &num1, const Fixed &num2)
+const Fixed& Fixed::min(const Fixed& num1, const Fixed& num2)
 {
 	if (num1._fpNum > num2._fpNum)
 		return (num2);
 	return (num1);
 }
 
-Fixed &Fixed::max(Fixed &num1, Fixed &num2)
+Fixed& Fixed::max(Fixed& num1, Fixed& num2)
 {
 	if (num1._fpNum < num2._fpNum)
 		return (num2);
 	return (num1);
 }
 
-const Fixed &Fixed::max(const Fixed &num1, const Fixed &num2)
+const Fixed& Fixed::max(const Fixed& num1, const Fixed& num2)
 {
 	if (num1._fpNum < num2._fpNum)
 		return (num2);
 	return (num1);
 }
 
-std::ostream &operator<<(std::ostream &out, const Fixed &other)
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
-	out << other.toFloat();
+	out << fixed.toFloat();
 	return out;
 }

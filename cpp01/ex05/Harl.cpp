@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 20:03:34 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/03 15:20:06 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/05 11:00:28 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ typedef void(Harl::*t_func)(void);
 
 void Harl::complain(std::string level)
 {
-	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	t_func	funcs[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	t_func	funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	for (int i = 0; i < 4; i++)
+	size_t levelsNum = sizeof(levels) / sizeof(levels[0]);
+	for (size_t i = 0; i < levelsNum; i++)
 	{
 		if (level == levels[i])
 		{

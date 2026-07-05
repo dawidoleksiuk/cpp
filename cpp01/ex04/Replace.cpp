@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 15:56:52 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/04 17:02:23 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/05 10:20:01 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,37 +31,35 @@ Replace::Replace(std::string filename, std::string s1, std::string s2)
 int	Replace::Execute(void)
 {
 	std::string	text;
-	bool firstLine = true;
 	std::string	newFilename = _filename + ".replace";
 	
 
-	std::ifstream MyReadFile(_filename.c_str());
-	if (!MyReadFile.is_open())
+	std::ifstream inFile(_filename.c_str());
+	if (!inFile.is_open())
 	{
 		std::cerr << "Could not open file: " << _filename << std::endl;
 		return 1;
 	}
-	std::ofstream MySaveFile(newFilename.c_str()); 
-	if (!MySaveFile.is_open())
+	std::ofstream outFile(newFilename.c_str()); 
+	if (!outFile.is_open())
 	{
-		MyReadFile.close();
+		inFile.close();
 		std::cerr << "Could not create file: " << newFilename << std::endl;
 		return 1;
 	}
-	while (std::getline(MyReadFile, text))
+	while (std::getline(inFile, text))
 	{
-		if (!firstLine)
-			MySaveFile << "\n";
-		_ReplaceText(text);
-		MySaveFile << text;
-		firstLine = false;
+		ReplaceText(text);
+		outFile << text;
+		if (!inFile.eof())
+			outFile << "\n";
 	}
-	MyReadFile.close();
-	MySaveFile.close();
+	inFile.close();
+	outFile.close();
 	return 0;
 }
 
-void	Replace::_ReplaceText(std::string& text)
+void	Replace::ReplaceText(std::string& text)
 {
 	std::size_t	found;
 

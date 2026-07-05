@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 15:56:59 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/04 17:01:30 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/05 09:51:47 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 	std::string	_s1;
 	std::string	_s2;
 	int	_s1len;
-	void	_ReplaceText(std::string& text);
+	void ReplaceText(std::string& text);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 16:45:20 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/16 21:20:44 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/05 12:42:34 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ Fixed::Fixed(const float num)
 	_fpNum = (int)(roundf(num * pow(2,_fractionalBits))) ;
 }
 
-Fixed::Fixed(const Fixed &obj)
+Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = obj;
+	*this = other;
 }
 
-Fixed &Fixed::operator=(const Fixed &obj)
+Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &obj)
-		_fpNum = obj._fpNum;
+	if (this != &other)
+		_fpNum = other._fpNum;
 	return *this;
 }
 
@@ -61,7 +61,7 @@ int	Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	Fixed::_fpNum = raw;
+	_fpNum = raw;
 }
 
 float Fixed::toFloat(void) const
@@ -80,8 +80,8 @@ int Fixed::toInt(void) const
 	return num;
 }
 
-std::ostream &operator<<(std::ostream &out, const Fixed &obj)
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
-	out << obj.toFloat();
+	out << fixed.toFloat();
 	return out;
 }
