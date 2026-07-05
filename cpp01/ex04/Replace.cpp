@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 15:56:52 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/03 14:34:02 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/04 17:02:23 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,25 @@ Replace::Replace(std::string filename, std::string s1, std::string s2)
 	_s1len = _s1.size();
 }
 
-void	Replace::Execute(void)
+int	Replace::Execute(void)
 {
 	std::string	text;
 	bool firstLine = true;
 	std::string	newFilename = _filename + ".replace";
+	
 
 	std::ifstream MyReadFile(_filename.c_str());
 	if (!MyReadFile.is_open())
 	{
 		std::cerr << "Could not open file: " << _filename << std::endl;
-		return ;
+		return 1;
 	}
 	std::ofstream MySaveFile(newFilename.c_str()); 
 	if (!MySaveFile.is_open())
 	{
 		MyReadFile.close();
-		std::cerr << "Could not open file: " << newFilename << std::endl;
-		return ;
+		std::cerr << "Could not create file: " << newFilename << std::endl;
+		return 1;
 	}
 	while (std::getline(MyReadFile, text))
 	{
@@ -57,6 +58,7 @@ void	Replace::Execute(void)
 	}
 	MyReadFile.close();
 	MySaveFile.close();
+	return 0;
 }
 
 void	Replace::_ReplaceText(std::string& text)

@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 17:32:34 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/03 12:41:16 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/04 16:47:21 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Weapon::Weapon(const std::string& weapon)
 }
 
 //first const - this reference is to read only
-//the second cont says that this method doesn't modify the class variables
+//the second const says that this method doesn't modify the class variables
 
 const std::string& Weapon::getType(void) const
 {

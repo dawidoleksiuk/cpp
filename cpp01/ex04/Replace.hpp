@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 15:56:59 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/03 14:31:23 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/07/04 17:01:30 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class	Replace
 {
 public:
 	Replace(std::string filename, std::string s1, std::string s2);
-	void	Execute(void);
+	int	Execute(void);
 private:
 	std::string	_filename;
 	std::string	_s1;
