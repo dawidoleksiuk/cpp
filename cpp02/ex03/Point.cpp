@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 18:49:08 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/06 10:15:08 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/01 21:04:02 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ Point::Point(const Point& other): _x(other.getX()), _y(other.getY())
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Point& Point::operator=(const Point&)
+Point& Point::operator=(const Point& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
+	(void)other;
 	return *this;
 }
 

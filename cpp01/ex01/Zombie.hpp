@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 17:42:03 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/03 12:20:57 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/09/30 18:27:06 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ public:
 	Zombie();
 	Zombie(std::string name);
 	~Zombie(void);
-	void	anounce(void);
+	void	announce(void);
 	void	setName(std::string name);
 private:
 	std::string	_name;

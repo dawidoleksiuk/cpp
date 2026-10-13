@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 16:45:20 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/05 12:22:19 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/01 19:33:33 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	Fixed::getRawBits(void) const
 	return (_fpNum);
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setRawBits(const int raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	_fpNum = raw;

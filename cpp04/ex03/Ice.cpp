@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 21:39:14 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/06/04 22:17:53 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/02 17:29:44 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Ice::Ice()
 {
 	std::cout << "Ice Default constructor called" << std::endl;
-	type = "ice";
+	+type = "ice";
 }
 
 Ice::Ice(const Ice &other)
@@ -29,7 +29,7 @@ Ice& Ice::operator=(const Ice &other)
 	std::cout << "Ice Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		type = other.type;
+		_type = other._type;
 	}
 	return *this;
 }

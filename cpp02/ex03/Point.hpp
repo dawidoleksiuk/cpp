@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 18:49:10 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/05 14:04:01 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/01 21:02:57 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ class	Point
 {
 public:
 	Point();
-	Point(const int num);
 	Point(const float num1, const float num2);
-	Point(const Point &other);
-	Point& operator=(const Point&);
+	Point(const Point& other);
+	Point& operator=(const Point& other);
 	~Point();
 	Fixed	getX() const;
 	Fixed	getY() const;

@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 20:18:32 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/28 22:34:49 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/01 22:03:47 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	void makeSound() const;
 	std::string getType() const;
 protected:
-	std::string type;
+	std::string _type;
 };
 
 #endif

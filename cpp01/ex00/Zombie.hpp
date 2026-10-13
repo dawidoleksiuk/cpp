@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 17:42:03 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/04 16:24:57 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/09/30 18:12:52 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #define ZOMBIE_HPP
 #include <string>
 
-class	Zombie{
-
+class	Zombie
+{
 public:
 	Zombie(std::string name);
 	~Zombie(void);

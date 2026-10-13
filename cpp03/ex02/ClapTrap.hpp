@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:40:26 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/24 16:16:17 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/01 21:24:42 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ public:
 	void beRepaired(unsigned int amount);
 protected:
 	std::string _name;
-	int _hit;
-	int _energy;
-	int _damage;
+	unsigned int _hit;
+	unsigned int _energy;
+	unsigned int _damage;
 };
 
 #endif

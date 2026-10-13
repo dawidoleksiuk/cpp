@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 17:53:27 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/06/04 12:09:58 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/02 17:06:11 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,24 @@
 Cat::Cat()
 {
 	std::cout << "Cat Default constructor called" << std::endl;
-	type = "cat";
+	_type = "cat";
 	_brain = new Brain();
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat& other) : Animal(other)
 {
 	std::cout << "Cat Copy constructor called" << std::endl;
-	_brain = NULL;
-	*this = other;
+	this->_brain = new Brain(*other._brain);
 }
 
-Cat &Cat::operator=(const Cat &other)
+Cat &Cat::operator=(const Cat& other)
 {
 	std::cout << "Cat Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		if (!_brain)
-			_brain = new Brain();
-		*_brain = *other._brain;
 		Animal::operator=(other);
+		delete this->_brain;
+		this->_brain = new Brain(*other._brain);
 	}
 	return *this;
 }
@@ -50,7 +48,7 @@ void Cat::makeSound() const
 	std::cout << "meow" << std::endl;
 }
 
-std::string Cat::getIdea(int index)
+std::string Cat::getIdea(int index) const
 {
 	return _brain->getIdea(index);
 }

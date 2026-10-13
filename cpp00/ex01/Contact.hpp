@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:15:13 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/03 11:27:37 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/09/29 19:42:21 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define CONTACT_HPP
 # include <string>
 
-class Contact{
+class Contact
+{
 public:
 	Contact();
 	bool	setContact(int numOfContacts);

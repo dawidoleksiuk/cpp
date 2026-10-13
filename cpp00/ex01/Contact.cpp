@@ -6,13 +6,13 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 15:20:05 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/03 11:29:23 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/09/29 19:50:23 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <iostream>
-#include <iomanip> 
+#include <iomanip>
 
 Contact::Contact() {}
 
@@ -61,7 +61,7 @@ void	Contact::displayPreviewRow()
 void	Contact::displayInfo(void)
 {
 	std::cout << std::endl << "The selected contact information:" << std::endl << std::endl;
-	std::cout << "_Index: " << (_index % 8) + 1 << std::endl;
+	std::cout << "Index: " << (_index % 8) + 1 << std::endl;
 	std::cout << "First name: " << _firstName << std::endl;
 	std::cout << "Last name: " << _lastName << std::endl;
 	std::cout << "Nickname: " << _nickname << std::endl;

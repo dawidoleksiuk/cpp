@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 21:51:00 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/06/04 21:53:30 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/02 17:29:22 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cure::Cure()
 {
 	std::cout << "Cure Default constructor called" << std::endl;
-	type = "cure";
+	_type = "cure";
 }
 
 Cure::Cure(const Cure &other)
@@ -29,7 +29,7 @@ Cure& Cure::operator=(const Cure &other)
 	std::cout << "Cure Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		type = other.type;
+		_type = other._type;
 	}
 	return *this;
 }

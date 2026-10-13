@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 20:32:14 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/04/29 20:41:42 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/09/30 18:41:12 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void)
 	for (int i = 0; i < N; i++)
 	{
 		std::cout << "index: " << i << std::endl; 
-		array[i].anounce();
+		array[i].announce();
 	}
 	delete[] array;
 }

@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 22:50:01 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/06/02 20:02:48 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/02 14:42:32 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Brain::~Brain()
 	std::cout << "Brain Destructor called" << std::endl;
 }
 
-std::string Brain::getIdea(int index)
+std::string Brain::getIdea(int index) const
 {
 	return _ideas[index];
 }

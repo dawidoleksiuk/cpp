@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 15:43:19 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/26 19:02:11 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/01 21:22:53 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class ScavTrap : virtual public ClapTrap
 {
 public:
 	ScavTrap();
-	ScavTrap(std::string n);
+	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &other);
 	ScavTrap &operator=(const ScavTrap &other);
 	~ScavTrap();

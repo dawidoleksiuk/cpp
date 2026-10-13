@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/06 16:45:20 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/05 13:36:29 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/01 20:57:16 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,28 +182,28 @@ int Fixed::toInt(void) const
 
 Fixed& Fixed::min(Fixed& num1, Fixed& num2)
 {
-	if (num1._fpNum > num2._fpNum)
+	if (num1 > num2)
 		return (num2);
 	return (num1);
 }
 
 const Fixed& Fixed::min(const Fixed& num1, const Fixed& num2)
 {
-	if (num1._fpNum > num2._fpNum)
+	if (num1 > num2)
 		return (num2);
 	return (num1);
 }
 
 Fixed& Fixed::max(Fixed& num1, Fixed& num2)
 {
-	if (num1._fpNum < num2._fpNum)
+	if (num1 < num2)
 		return (num2);
 	return (num1);
 }
 
 const Fixed& Fixed::max(const Fixed& num1, const Fixed& num2)
 {
-	if (num1._fpNum < num2._fpNum)
+	if (num1 < num2)
 		return (num2);
 	return (num1);
 }

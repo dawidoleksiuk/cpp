@@ -28,7 +28,7 @@ AAnimal &AAnimal::operator=(const AAnimal &other)
 	std::cout << "AAnimal Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		type = other.type;
+		_type = other._type;
 	}
 	return *this;
 }
@@ -40,5 +40,5 @@ AAnimal::~AAnimal()
 
 std::string AAnimal::getType() const
 {
-	return type;
+	return _type;
 }

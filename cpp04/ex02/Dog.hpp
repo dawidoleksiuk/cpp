@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 17:53:37 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/06/04 12:16:17 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/02 17:13:46 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ public:
 	Dog& operator=(const Dog& other);
 	~Dog();
 	void makeSound() const;
-	std::string getIdea(int index);
+	std::string getIdea(int index) const;
 	void setIdea(int index, std::string idea);
 private:
-	Brain *_brain;
+	Brain* _brain;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 17:02:19 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/05/24 20:19:50 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/01 21:27:35 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap() : ClapTrap()
 	_damage = 30;
 }
 
-FragTrap::FragTrap(std:: string n) : ClapTrap(n)
+FragTrap::FragTrap(std:: string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap Name constructor called" << std::endl;
 	_hit = 100;

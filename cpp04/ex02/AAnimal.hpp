@@ -24,7 +24,7 @@ public:
 	virtual void makeSound() const = 0;
 	std::string getType() const;
 protected:
-	std::string type;
+	std::string _type;
 };
 
 #endif

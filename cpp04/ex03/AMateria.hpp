@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 12:29:35 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/06/04 22:40:05 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/10/02 17:28:33 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class AMateria
 {
 protected:
-	std::string	type;
+	std::string	_type;
 public:
 	AMateria();
 	AMateria(std::string const &type);

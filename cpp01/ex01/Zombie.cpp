@@ -6,7 +6,7 @@
 /*   By: doleksiu <doleksiu@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 17:42:10 by doleksiu          #+#    #+#             */
-/*   Updated: 2026/07/03 12:21:24 by doleksiu         ###   ########.fr       */
+/*   Updated: 2026/09/30 18:36:39 by doleksiu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ Zombie::~Zombie(void)
 	std::cout << _name << " died" << std::endl;
 }
 
-void	Zombie::anounce(void)
+void	Zombie::announce(void)
 {
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void	Zombie::setName(std::string name)
 {
-	Zombie::_name = name;
+	_name = name;
 }
